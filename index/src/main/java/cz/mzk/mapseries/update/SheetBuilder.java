@@ -164,7 +164,7 @@ public class SheetBuilder {
         }
         
         int code = checkUrl(url);
-        
+        log.println(url);
         switch (code) {
             case 200: return url;
             case 403: return Constants.THUMBNAIL_COPYRIGHTED;

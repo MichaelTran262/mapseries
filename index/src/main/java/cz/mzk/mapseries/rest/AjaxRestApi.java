@@ -41,6 +41,7 @@ public class AjaxRestApi {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public AjaxResult contentDefinitionUpdate(ContentDefinitionUpdate update) {
+        LOG.info("Running update:");
         LOG.info(update);
         try {
             githubService.saveFile(update.getCommitMessage(), Configuration.CONTENT_DEFINITION_PATH, update.getContent());
@@ -55,6 +56,7 @@ public class AjaxRestApi {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public AjaxResult contentDefinitionRunUpdate() {
+        LOG.info("Running update schedule");
         try {
             
             if (!githubService.isAuthenticate()) {

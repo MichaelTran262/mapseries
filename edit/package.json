@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moravianlibrary/mapseries.git"
+    "url": "git+https://github.com/MichaelTran262/mapseries.git"
   },
   "keywords": [
     "geojson",
@@ -17,9 +17,9 @@
   "author": "Erich Duda",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/moravianlibrary/mapseries/issues"
+    "url": "https://github.com/MichaelTran262/mapseries/issues"
   },
-  "homepage": "https://github.com/moravianlibrary/mapseries#readme",
+  "homepage": "https://github.com/MichaelTran262/mapseries#readme",
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",

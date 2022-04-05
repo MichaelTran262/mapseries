@@ -59,7 +59,7 @@ public class UpdateMDB implements MessageListener {
             long taskId = msg.getLongProperty(UpdateEJB.TASK_ID_KEY);
             UpdateTaskDAO updateTaskDAO = updateTaskManager.findById(taskId);
             updateTaskDAO.setStartDate(ZonedDateTime.now());
-                
+            LOG.info("UpdateMDB.java, onMessage");
             UpdateTaskResult result = updateEJB.runUpdateTask(updateTaskDAO, msg.getBody(String.class));
             
             // Only if the task passed, persist the series

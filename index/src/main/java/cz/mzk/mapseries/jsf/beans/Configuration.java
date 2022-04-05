@@ -92,7 +92,7 @@ public class Configuration {
     }
     
     public boolean isTaskActive(UpdateTaskDAO task) {
-        LOG.infof("Comparing %d = %d", task.getId(), getCurrentVersion());
+        //LOG.infof("Comparing %d = %d", task.getId(), getCurrentVersion());
         return task.getId() == getCurrentVersion();
     }
     

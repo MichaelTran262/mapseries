@@ -4,7 +4,7 @@ var GitHub = require('github-api'),
 module.exports = function(context, config) {
 
   config = config || {};
-  var username = config.username || 'moravianlibrary';
+  var username = config.username || 'MichaelTran262';
   var reponame = config.reponame || 'mapseries-data';
   var workBranch = config.workBranch || 'work';
 

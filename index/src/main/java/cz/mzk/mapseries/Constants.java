@@ -6,7 +6,7 @@ package cz.mzk.mapseries;
  */
 public class Constants {
     
-    public static final String REPO_USER = "moravianlibrary";
+    public static final String REPO_USER = "MichaelTran262";
     public static final String REPO_NAME = "mapseries-data";
     
     public static final String GITHUB_CLIENT_ID = getProperty("GITHUB_CLIENT_ID");

@@ -3,7 +3,7 @@
 set -e
 set -x
 
-MAVEN_URL=http://apache.miloslavbrada.cz/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+MAVEN_URL=https://archive.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
 MAVEN_ARCHIVE_FILE=maven.tar.gz
 MAVEN_LOCATION=/opt
 

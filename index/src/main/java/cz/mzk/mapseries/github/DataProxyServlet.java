@@ -28,7 +28,7 @@ public class DataProxyServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             String filePath = req.getPathInfo();
-            File repoPath = new File("/moravianlibrary/mapseries-data/master");
+            File repoPath = new File("/MichaelTran262/mapseries-data/master");
 
             URI githubUri = new URIBuilder()
                     .setScheme("https")

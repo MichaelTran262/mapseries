@@ -73,7 +73,7 @@ export default {
                 "minzoom": 0
                 "maxzoom": 22
             }]
-            "glyphs": "https://glfonts.lukasmartinelli.ch/fonts/{fontstack}/{range}.pbf"
+            "glyphs": "https://fonts.openmaptiles.org/{fontstack}/{range}.pbf"
         center: center
         zoom: zoom
         bearing: bearing

@@ -82,6 +82,7 @@ public class UpdateEJB {
         
         TextMessage msg = context.createTextMessage(githubService.loadFile("/" + Configuration.CONTENT_DEFINITION_PATH));
         msg.setLongProperty(TASK_ID_KEY, updateTaskDAO.getId());
+        LOG.info("Schedule Update Task. ");
         context.createProducer().send(queue, msg);
     }
     
@@ -111,7 +112,7 @@ public class UpdateEJB {
         runningTask = updateTaskDAO;
         
         File logFile = createTempFile();
-        
+        LOG.info("LOGFILE= " + logFile);
         log = createPrintStream(logFile);
         executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         
@@ -142,7 +143,7 @@ public class UpdateEJB {
     
     private File createTempFile() {
         try {
-            return File.createTempFile("mapseries", ".log");
+            return File.createTempFile("/mapseries_logs/mapseries", ".log");
         } catch (IOException e) {
             throw new RuntimeException("Error while creating temp file.", e);
         }
@@ -163,7 +164,7 @@ public class UpdateEJB {
     
     private List<VersionedData> doUpdate(String definitionJson) throws Exception {
         log.println("Starting update.");
-        
+        LOG.info("Starting update"); 
         List<VersionedData> result = new ArrayList<>();
         
         ContentDefinitionManager contentDefinitionManager = ContentDefinitionManager.fromJsonString(definitionJson);
@@ -173,7 +174,7 @@ public class UpdateEJB {
         OaiMarcXmlReader oaiMarcXmlReader = new OaiMarcXmlReader("http://aleph.mzk.cz/OAI", "MZK01-MAPY");
         
         for (MarcRecord marcRecord : oaiMarcXmlReader) {
-
+            //LOG.info(marcRecord.toString());
             Optional<ContentDefinitionItem> definition = findDefinitionForRecord(definitions, marcRecord);
             if (!definition.isPresent()) {
                 continue;
@@ -189,7 +190,8 @@ public class UpdateEJB {
                 DescriptionBuilder descriptionBuilder = new DescriptionBuilder(definition.get(), serie);
                 result.addAll(descriptionBuilder.buildDescriptions());
             }
-            
+            LOG.info(marcRecord.toString());
+            LOG.info("\n");
             SheetBuilder sheetBuilder = new SheetBuilder(definition.get(), marcRecord, log, executor);
             Optional<SheetDAO> optSheetDAO = sheetBuilder.buildSheet();
             
@@ -204,7 +206,7 @@ public class UpdateEJB {
         }
         
         log.println("Update finished successfully");
-        
+        LOG.info("Update finished successfully");
         return result;
     }
     

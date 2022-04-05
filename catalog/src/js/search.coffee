@@ -141,7 +141,7 @@ class Search
                 }
               }
             ]
-            "glyphs": "https://glfonts.lukasmartinelli.ch/fonts/{fontstack}/{range}.pbf"
+            "glyphs": "https://fonts.openmaptiles.org/{fontstack}/{range}.pbf"
         center: center
         zoom: zoom
         bearing: bearing
