@@ -5,7 +5,7 @@ services:
     restart: always
     environment:
       GITHUB_CLIENT_ID: be39fea131a1ca0521d8
-      GITHUB_CLIENT_SECRET: 29d7e6f9d0f12bfbf882811c5796a6d1a576e908
+      GITHUB_CLIENT_SECRET:
     ports:
       - 8080:8080
       - 8787:8787
